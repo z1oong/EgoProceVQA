@@ -170,7 +170,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EgoProceVQA</title>
-    <!-- 引入 Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
         body {
@@ -178,9 +177,9 @@
             margin: 0;
             background-color: #f7f8fa;
         }
-        /* 图片卡片样式，和你视频外观完全统一 */
+        /* 图片卡片样式，和视频视觉统一 */
         .fig-card img {
-            max-height: 320px; /* 统一限制高度，防止比例差异导致高低不一 */
+            max-height: 320px;
             width: 100%;
             object-fit: contain;
             border: 4px solid #ffffff;
@@ -194,15 +193,18 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+        /* 关键：给列容器开启垂直居中，中线对齐 */
+        .columns.is-align-center {
+            align-items: center;
+        }
     </style>
 </head>
 <body>
 
 <section class="section">
   <div class="container">
-    <!-- columns is-multiline 移动端自动换行，is-centered 整行居中 -->
-    <div class="columns is-centered is-multiline">
-      <!-- 三列均分：desktop 每列占4份，大屏自动均分三栏 -->
+    <!-- 增加 is-align-center 类，实现垂直中线对齐 -->
+    <div class="columns is-centered is-multiline is-align-center">
       <div class="column is-4-desktop is-10-mobile">
         <div class="content has-text-centered fig-card">
           <img src="images/overview3.pdf" alt="Figure 1"/>
@@ -229,31 +231,7 @@
 
 </body>
 </html>
-  
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-5-desktop is-6-widescreen">
-        <div class="content has-text-centered">
-          <img src="images/overview3.pdf" alt="Figure 1" width="100%"/>
-          <p><b><i>Figure 1:</i></b> Overview of EgoProceVQA. (a) We uniquely introduce a benchmark for key-step-level VQA across six question types. (b) EgoProceAgent autonomously explores and constructs its own skills, and subsequently leverages these skills for tool invocation and reasoning. (c) Our outstanding performance on multiple tasks. Left: 8-frame input; Right: 16-frame input.</p>
-        </div>
-      </div>
-      <div class="column is-5-desktop is-6-widescreen">
-        <div class="content has-text-centered">
-          <img src="images/dataset_overview_pie_cropped (3).pdf" alt="Figure 4" width="100%"/>
-          <p><b><i>Figure 4:</i></b> Statistics of the six task types and four scenarios in EgoProceVQA.</p>
-        </div>
-      </div>
-      <div class="column is-5-desktop is-6-widescreen">
-        <div class="content has-text-centered">
-          <img src="images/dataset_overview_bars(1).pdf" alt="Figure 5" width="100%"/>
-          <p><b><i>Figure 5:</i></b> Statistics of 31 procedural task types in EgoProceVQA.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="hero is-white is-small">
   <div class="hero-body has-text-centered">
