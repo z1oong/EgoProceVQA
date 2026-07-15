@@ -177,7 +177,6 @@
             margin: 0;
             background-color: #f7f8fa;
         }
-        /* 图片卡片样式，和视频视觉统一 */
         .fig-card img {
             max-height: 320px;
             width: 100%;
@@ -193,34 +192,40 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
-        /* 关键：给列容器开启垂直居中，中线对齐 */
+        /* 同一行内元素垂直中线对齐 */
         .columns.is-align-center {
             align-items: center;
+        }
+        /* 上下两行间距 */
+        .row-gap {
+            margin-bottom: 4rem;
         }
     </style>
 </head>
 <body>
 
-<div class="columns is-centered is-multiline is-align-center">
-      <div class="column is-4-desktop is-10-mobile">
+<section class="section">
+  <div class="container">
+    <!-- 第一行：单独 Figure1 整行居中 -->
+    <div class="columns is-centered row-gap">
+      <div class="column is-8-desktop is-10-mobile">
         <div class="content has-text-centered fig-card">
           <img src="images/overview3.pdf" alt="Figure 1"/>
           <p><b><i>Figure 1:</i></b> Overview of EgoProceVQA. (a) We uniquely introduce a benchmark for key-step-level VQA across six question types. (b) EgoProceAgent autonomously explores and constructs its own skills, and subsequently leverages these skills for tool invocation and reasoning. (c) Our outstanding performance on multiple tasks. Left: 8-frame input; Right: 16-frame input.</p>
         </div>
       </div>
-  
-<section class="section">
-  <div class="container">
-    <!-- 增加 is-align-center 类，实现垂直中线对齐 -->
+    </div>
 
-      <div class="column is-4-desktop is-10-mobile">
+    <!-- 第二行：Figure4 + Figure5 并排，中线对齐 -->
+    <div class="columns is-centered is-multiline is-align-center">
+      <div class="column is-5-desktop is-10-mobile">
         <div class="content has-text-centered fig-card">
           <img src="images/dataset_overview_pie_cropped (3).pdf" alt="Figure 4"/>
           <p><b><i>Figure 4:</i></b> Statistics of the six task types and four scenarios in EgoProceVQA.</p>
         </div>
       </div>
 
-      <div class="column is-4-desktop is-10-mobile">
+      <div class="column is-5-desktop is-10-mobile">
         <div class="content has-text-centered fig-card">
           <img src="images/dataset_overview_bars(1).pdf" alt="Figure 5"/>
           <p><b><i>Figure 5:</i></b> Statistics of 31 procedural task types in EgoProceVQA.</p>
