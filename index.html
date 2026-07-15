@@ -128,10 +128,34 @@
   }
 </style>
 
-<video autoplay muted playsinline width="800">
-  <source src="images/egoprocevqa.mp4" type="video/mp4">
-  您的浏览器不支持视频播放
-</video>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自动播放视频</title>
+    <style>
+        video {
+            width: 100%;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        autoplay：进入页面自动播放
+        muted：静音（浏览器强制要求，无muted无法自动播放）
+        playsinline：移动端内嵌播放，不切全屏
+        loop：循环播放
+        controls：显示播放/音量/进度条控件
+    -->
+    <video autoplay muted playsinline loop controls>
+        <!-- 视频文件路径，mp4兼容性最好 -->
+        <source src="images/egoprocevqa.mp4" type="video/mp4">
+        当前浏览器不支持该视频格式
+    </video>
+</body>
+</html>
+  
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
