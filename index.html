@@ -134,22 +134,29 @@
     <meta charset="UTF-8">
     <title>自动播放视频</title>
     <style>
+        body {
+            /* 页面整体留白，不会贴边 */
+            padding: 40px 20px;
+            margin: 0;
+            background-color: #f7f8fa; /* 浅灰背景衬托视频 */
+        }
         video {
-            width: 100%;
-            max-width: 1200px;
+            /* 控制视频大小，宽度固定800px，屏幕小会自动缩小 */
+            width: 800px;
+            max-width: 100%;
+            /* 边框+圆角 */
+            border: 4px solid #ffffff;
+            border-radius: 14px;
+            /* 阴影，立体镶嵌效果 */
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            /* 居中 */
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <!-- 
-        autoplay：进入页面自动播放
-        muted：静音（浏览器强制要求，无muted无法自动播放）
-        playsinline：移动端内嵌播放，不切全屏
-        loop：循环播放
-        controls：显示播放/音量/进度条控件
-    -->
     <video autoplay muted playsinline loop controls>
-        <!-- 视频文件路径，mp4兼容性最好 -->
         <source src="images/egoprocevqa.mp4" type="video/mp4">
         当前浏览器不支持该视频格式
     </video>
