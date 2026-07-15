@@ -915,24 +915,22 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自动播放视频</title>
     <style>
         body {
-            /* 页面整体留白，不会贴边 */
             padding: 40px 20px;
             margin: 0;
-            background-color: #f7f8fa; /* 浅灰背景衬托视频 */
+            background-color: #f7f8fa;
         }
-        video {
-            /* 控制视频大小，宽度固定800px，屏幕小会自动缩小 */
+        /* video 和 iframe 共用样式 */
+        video, iframe {
             width: 800px;
             max-width: 100%;
-            /* 边框+圆角 */
             border: 4px solid #ffffff;
             border-radius: 14px;
-            /* 阴影，立体镶嵌效果 */
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-            /* 居中 */
+            /* 居中核心代码 */
             display: block;
             margin: 0 auto;
         }
